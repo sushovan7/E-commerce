@@ -1,5 +1,6 @@
 import React from "react";
 import bannerImg1 from '../img/banner/banner2.jpg'
+import { Link } from "react-router-dom";
 
 function Banner() {
   return (
@@ -7,7 +8,7 @@ function Banner() {
       <div className="banner-left h-full w-1/2 flex gap-4 flex-col p-20">
         <h1 className="text-4xl font-semibold">Creative <br /> harmonius living</h1>
         <p className="text-xl mb-5">Minero Products are all made to standard sizes so that you can mix and match them freely.</p>
-        <button className="bg-black text-white text-2xl p-5 hover:opacity-80 ">SHOP NOW</button>
+        <Link onClick={()=>window.scrollTo(0,0)} to='categories/all' className="bg-black text-white text-2xl p-5 hover:opacity-80 ">SHOP NOW</Link>
       </div>
       <div className="banner-right h-full w-1/2">
         <img className="h-full w-full object-cover object-center" src={bannerImg1} alt="" />

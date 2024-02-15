@@ -21,7 +21,7 @@ import All from "./Components/Categorirs-pages/All";
 import Chairs from "./Components/Categorirs-pages/Chairs";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(
+  createRoutesFromElements([
     <Route path="/" element={<Root />}>
       <Route index element={<Home />} />
       <Route path="categories" element={<Categories />}>
@@ -33,10 +33,10 @@ const router = createBrowserRouter(
         <Route path="chairs" element={<Chairs />} />
         <Route path="skincare" element={<Skincare />} />
       </Route>
-      <Route path="productpage/:id" element={<ProductPage />} />
+      <Route path="categories/productpage/:id" element={<ProductPage />} />
       <Route path="*" element={<Error />} />
     </Route>
-  )
+  ])
 );
 
 function App() {

@@ -9,7 +9,8 @@ function Chairs() {
       {filteredItems.map((item) => (
        <div  className="product-info h-80 w-60 m-2  px-2 border-solid border-2 border-grey-500 hover:border-black">
        <Link
-    to={`/categories/product/${item.id}`}
+       onClick={()=>window.scrollTo(0,0)}
+    to={`/categories/productpage/${item.id}`}
       key={item.id}
      
     >

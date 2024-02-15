@@ -7,10 +7,11 @@ function Kitchen() {
   return (
     <div className="all flex flex-wrap px-36 mt-10 gap-5">
       {filteredItems.map((item) => (
-        <div  className="product-info h-80 w-60 m-2  px-2 border-solid border-2 border-grey-500 hover:border-black">
-        <Link
-     to={`/categories/product/${item.id}`}
-       key={item.id}
+        <Link   onClick={()=>window.scrollTo(0,0)}
+        to={`/categories/productpage/${item.id}`}
+          key={item.id}  className="product-info h-80 w-60 m-2  px-2 border-solid border-2 border-grey-500 hover:border-black">
+        <div
+       
       
      >
        <div className="img-container h-3/4 mb-5">
@@ -24,8 +25,8 @@ function Kitchen() {
          <h4>{item.description}</h4>
          <h3>{item.price} $</h3>
        </div>
-     </Link>
      </div>
+     </Link>
       ))}
     </div>
   );

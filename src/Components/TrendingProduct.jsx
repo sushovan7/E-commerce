@@ -1,12 +1,15 @@
 import React from "react";
 import { items } from "../data";
+import { Link } from "react-router-dom";
 
 function TrendingProduct() {
   const filteredItems = items.filter((item) => item.id > 8);
   return (
     <>
       {filteredItems.map((item) => (
-        <div
+        <Link
+        to={`/categories/productpage/${item.id}`}
+        onClick={()=>window.scrollTo(0,0)}
           key={item.id}
           className="product-info h-80  m-2  px-2 border-solid border-2 border-grey-500 hover:border-black"
         >
@@ -21,7 +24,7 @@ function TrendingProduct() {
             <h4>{item.description}</h4>
             <h3>{item.price} $</h3>
           </div>
-        </div>
+        </Link>
       ))}
     </>
   );

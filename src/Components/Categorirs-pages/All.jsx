@@ -4,7 +4,7 @@ import Product from '../Product'
 
 function All() {
   return (
-    <Product />
+   <Product />
   )
 }
 
