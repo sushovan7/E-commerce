@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 
+//hrader
+
 function CategoriesHeader() {
     const [btnName,setBtnName] = useState('All')
     const handleBtnName = (e) => {
