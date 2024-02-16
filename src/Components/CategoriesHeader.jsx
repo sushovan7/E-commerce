@@ -18,9 +18,9 @@ function CategoriesHeader() {
       </Link>
       <h1 className="text-2xl text-center font-bold">{btnName}</h1>
       <div className="filter-btn flex items-center justify-center gap-10 mt-7">
-      <Link to="all" className="border-solid border-2 border-grey-500 hover:border-black p-1" onClick={() => handleBtnName("all")}>
+      {/* <Link to="all" className="border-solid border-2 border-grey-500 hover:border-black p-1" onClick={() => handleBtnName("all")}>
               <button>All</button>
-            </Link>
+            </Link> */}
             <Link to="furnitures" className="border-solid border-2 border-grey-500 hover:border-black p-1">
               <button onClick={() => handleBtnName("furnitures")}>
                 Furnitures
