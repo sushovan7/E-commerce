@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { items } from "../data";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import TrendingNow from "../Components/TrendingNow";
 
+// import { useCart } from "../context/CartProvider";
+
+
 function ProductPage() {
+
+
   const {id}= useParams();
   const item = items.filter((item) => item.id === parseInt(id));
-
-
   const [quantity, setQuantity] = useState(1);
   const [image, setImage] = useState(item[0].img);
-
-
   const changeImage = (e) => {
     setImage(e.target.src);
   };
+
+  // const {dispatch} = useCart()
+
+// function handleAdd(){
+//   console.log('handleAdd called')
+//   const newCartItem = {id:id,price:item.price,description:item.description,img:item[0].img,quantity:1}
+//   dispatch({
+//     type:"ADD_ITEM",payload:''
+//   })
+// }
 
   const increase = () => {
     if (quantity >= 1) {

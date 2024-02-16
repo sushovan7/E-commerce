@@ -9,7 +9,7 @@ function Navbar() {
     <Link to='/' className='text-3xl italic'>minero.</Link>
     <div className='flex items-center gap-5'>
       <Link className='text-lg hover:text-blue-500' to='categories'>Categories</Link>
-      <Link className='text-lg hover:text-blue-500' to='productpage/:id'>Product Page</Link>
+      {/* <Link className='text-lg hover:text-blue-500' to='productpage/:id'>Product Page</Link> */}
       <BsCartDash className='h-10 w-10'/>
     </div>
    </div>

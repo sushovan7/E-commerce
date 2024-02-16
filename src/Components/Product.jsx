@@ -1,7 +1,12 @@
+
 import { items } from "../data";
 import { Link } from "react-router-dom";
 
 function Product() {
+
+ 
+
+
   return (
     <div className="all flex flex-wrap px-36 mt-10 justify-between">
       {items.map((item) => (

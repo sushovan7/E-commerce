@@ -5,6 +5,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+// import CartProvider from "./context/CartProvider";
+
 // import pages
 
 import Home from "./Pages/Home";
@@ -40,7 +42,10 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+     <RouterProvider router={router} />
+  )
+ ;
 }
 
 export default App;
