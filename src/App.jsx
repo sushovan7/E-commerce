@@ -5,14 +5,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-// import CartProvider from "./context/CartProvider";
+
+import { useEffect, useState } from "react";
+
 
 // import pages
 
 import Home from "./Pages/Home";
 import Categories from "./Pages/Categories";
 import Error from "./Pages/Error";
-import ProductPage from "./Pages/ProductPage";
+import ProductPage , {CartContext} from "./Pages/ProductPage";
 import Root from "./Pages/Root";
 import Furnitures from "./Components/Categorirs-pages/Furnitures";
 import Electronics from "./Components/Categorirs-pages/Electronics";
@@ -42,8 +44,31 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const [cartItem, setCartItem] = useState([]);
+
+  const addToCart = (item) => {
+    setCartItem([...cartItem, item]);
+  };
+
+  // local storage
+  useEffect(() => {
+    const json = localStorage.getItem("cartItem");
+    const savedCart = JSON.parse(json);
+    if (savedCart) {
+      setCartItem(savedCart);
+    }
+  }, []);
+
+  useEffect(() => {
+    const json = JSON.stringify(cartItem);
+    localStorage.setItem("cartItem", json);
+  }, [cartItem]);
+
+
   return (
+    <CartContext.Provider value={{ cartItem, addToCart, setCartItem }}>
      <RouterProvider router={router} />
+     </CartContext.Provider>
   )
  ;
 }
